@@ -6,6 +6,10 @@ on:
   pull_request:
     branches: [ main ]
 
+permissions:
+  contents: read
+  security-events: write
+
 jobs:
   test:
     name: Test & Lint (Python ${{ matrix.python-version }})
@@ -47,7 +51,7 @@ jobs:
             echo "demo_bad_tests.py successfully flagged as expected."
           fi
 
-      - name: Export and upload SARIF
+      - name: Export SARIF report
         if: matrix.python-version == '3.12'
         run: |
           shamtest examples/demo_bad_tests.py --sarif --fail-on never > shamtest-results.sarif
