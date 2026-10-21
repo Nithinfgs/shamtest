@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "shamtest"
+version = "0.1.0"
+description = "Catch sham, tautological, and mock-poisoned tests before they merge"
+readme = "README.md"
+authors = [
+    { name = "Nithin Selvaraj", email = "nithinfgs@users.noreply.github.com" }
+]
+license = { text = "MIT" }
+keywords = ["testing", "ast", "linter", "ai-tests", "mock-smells", "tautology", "code-quality"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Quality Assurance",
+    "Topic :: Software Development :: Testing",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+]
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+shamtest = "shamtest.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/Nithinfgs/shamtest"
+Issues = "https://github.com/Nithinfgs/shamtest/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["shamtest*"]
